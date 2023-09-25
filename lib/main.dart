@@ -25,7 +25,7 @@ class _XylophoneAppState extends State<XylophoneApp> {
   Widget buildKey({required Color color, required int soundNumber}) {
     return Expanded(
       child: Padding(
-        padding: EdgeInsets.all(5.0), // Agregar margen de 5 en cada lado del TextButton
+        padding: EdgeInsets.all(5.0),
         child: TextButton(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(color),
@@ -33,7 +33,7 @@ class _XylophoneAppState extends State<XylophoneApp> {
           onPressed: () {
             playSound(soundNumber);
           },
-          child: const SizedBox(), // Puedes reemplazar esto con el contenido de tu botón
+          child: const SizedBox(),
         ),
       ),
     );
@@ -52,17 +52,31 @@ class _XylophoneAppState extends State<XylophoneApp> {
         backgroundColor: Colors.black,
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(30.0), // Agregar margen de 30 en todos los lados
+            padding: const EdgeInsets.all(50.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                buildKey(color: Colors.red, soundNumber: 1),
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 5.0),
+                    child: Text(
+                      "Selecciona una tecla para hacer sonar el xilófono",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ),
+                buildKey(color: Colors.white, soundNumber: 1),
                 buildKey(color: Colors.white, soundNumber: 2),
-                buildKey(color: Colors.red, soundNumber: 3),
+                buildKey(color: Colors.white, soundNumber: 3),
                 buildKey(color: Colors.white, soundNumber: 4),
-                buildKey(color: Colors.red, soundNumber: 5),
+                buildKey(color: Colors.white, soundNumber: 5),
                 buildKey(color: Colors.white, soundNumber: 6),
-                buildKey(color: Colors.red, soundNumber: 7),
+                buildKey(color: Colors.white, soundNumber: 7),
               ],
             ),
           ),

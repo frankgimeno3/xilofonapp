@@ -22,10 +22,14 @@ class _XylophoneAppState extends State<XylophoneApp> {
     }
   }
 
-  Widget buildKey({required Color color, required int soundNumber}) {
-    return Expanded(
+  Widget buildKey(
+      {required Color color,
+      required int soundNumber,
+      required double paddingnum}) {
+    return Padding(
+      padding: EdgeInsets.fromLTRB(30.0, 5.0, paddingnum, 5.0),
       child: Padding(
-        padding: EdgeInsets.all(5.0),
+        padding: EdgeInsets.fromLTRB(5.0, 5.0, 5.0, 5.0),
         child: TextButton(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(color),
@@ -52,7 +56,7 @@ class _XylophoneAppState extends State<XylophoneApp> {
         backgroundColor: Colors.black,
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(50.0),
+            padding: const EdgeInsets.all(30.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
@@ -60,23 +64,23 @@ class _XylophoneAppState extends State<XylophoneApp> {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(30.0, 30.0, 30.0, 5.0),
                     child: Text(
-                      "Selecciona una tecla para hacer sonar el xilófono",
+                      "Haz sonar el xilófono",
                       style: TextStyle(
+                        fontFamily: 'Pacifico',
                         color: Colors.white,
                         fontSize: 30.0,
-                        fontWeight: FontWeight.bold,
-                      ),
+                       ),
                       textAlign: TextAlign.center,
                     ),
                   ),
                 ),
-                buildKey(color: Colors.white, soundNumber: 1),
-                buildKey(color: Colors.white, soundNumber: 2),
-                buildKey(color: Colors.white, soundNumber: 3),
-                buildKey(color: Colors.white, soundNumber: 4),
-                buildKey(color: Colors.white, soundNumber: 5),
-                buildKey(color: Colors.white, soundNumber: 6),
-                buildKey(color: Colors.white, soundNumber: 7),
+                buildKey(color: Colors.brown.shade900, soundNumber: 1, paddingnum: 1.0),
+                buildKey(color: Colors.brown.shade800, soundNumber: 2, paddingnum: 16.0),
+                buildKey(color: Colors.brown.shade700, soundNumber: 3, paddingnum: 35.0),
+                buildKey(color: Colors.brown.shade600, soundNumber: 4, paddingnum: 55.0),
+                buildKey(color: Colors.brown, soundNumber: 5, paddingnum: 70.0),
+                buildKey(color: Colors.brown.shade400, soundNumber: 6, paddingnum: 90.5),
+                buildKey(color: Colors.brown.shade300, soundNumber: 7, paddingnum: 110.0),
               ],
             ),
           ),
